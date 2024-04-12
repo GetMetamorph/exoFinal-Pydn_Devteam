@@ -1,13 +1,16 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Task {
 
     private String taskText;
 
     private Status status;
-    private String taskCreatedDate;
+    private LocalDateTime taskCreatedDate;
 
     public Task(String taskText) {
         this.taskText = taskText;
-        this.taskCreatedDate = java.time.LocalDate.now().toString();
+        this.taskCreatedDate = java.time.LocalDateTime.now();
         this.status = Status.TODO; // Default is To do when created
     }
 
@@ -15,7 +18,7 @@ public class Task {
         return taskText;
     }
 
-    public String getTaskCreatedDate() {
+    public LocalDateTime getTaskCreatedDate() {
         return taskCreatedDate;
     }
 
@@ -23,13 +26,14 @@ public class Task {
         this.taskText = taskText;
     }
 
-    public void setTaskCreatedDate(String taskCreatedDate) {
+    public void setTaskCreatedDate(LocalDateTime taskCreatedDate) {
         this.taskCreatedDate = taskCreatedDate;
     }
 
     public String toString() {
-        return  "[" + status +"] " + taskText + " Created on: " + taskCreatedDate;
+        return  "[" + status +"] " + taskText + " (" + taskCreatedDate + ")";
     }
+
 
 
 }
