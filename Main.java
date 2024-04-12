@@ -8,6 +8,7 @@ public class Main {
         switch (commandEnum) {
             case ADD:
                 System.out.println("Adding a new task");
+
                 break;
             case LIST:
                 System.out.println("Listing all tasks");

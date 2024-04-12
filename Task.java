@@ -1,11 +1,14 @@
 public class Task {
 
     private String taskText;
+
+    private Status status;
     private String taskCreatedDate;
 
-    public Task(String taskText, String taskCreatedDate) {
+    public Task(String taskText) {
         this.taskText = taskText;
-        this.taskCreatedDate = taskCreatedDate;
+        this.taskCreatedDate = java.time.LocalDate.now().toString();
+        this.status = Status.TODO; // Default is To do when created
     }
 
     public String getTaskText() {
