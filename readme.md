@@ -1,7 +1,8 @@
 ### This project will be built on python
 
 Functionnalities needed :
-- [ ] Being able to add a task to the Todo List
+- [X] Being able to create a Todo List
+- [X] Being able to add a task to the Todo List
 - [ ] Being able to remove a task from the Todo List
 - [ ] Being able to mark a task as done
 - [ ] Being able to list all the tasks
