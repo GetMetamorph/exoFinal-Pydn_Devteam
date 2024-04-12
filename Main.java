@@ -3,11 +3,12 @@ import java.io.IOException;
 
 public class Main {
     public static void readCommands(String[] args) throws IOException {
-        String command = args[0];
+        String COMMAND = args[0];
+        String FILENAME = args[1];
 
         TodoList todoList = new TodoList();
 
-        Commands commandEnum = Commands.valueOf(command.toUpperCase());
+        Commands commandEnum = Commands.valueOf(COMMAND.toUpperCase());
         switch (commandEnum) {
             case ADD:
                 System.out.println("Adding a new task");
@@ -21,7 +22,7 @@ public class Main {
                 break;
             case CREATE:
                 System.out.println("Creating a new Todo list");
-                FileGenerator.generateFile("todo");
+                FileGenerator.generateFile(FILENAME);
                 break;
             case DELETE:
                 System.out.println("Deleting a task");
