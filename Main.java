@@ -1,5 +1,5 @@
-import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void readCommands(String[] args) throws IOException {
@@ -28,6 +28,7 @@ public class Main {
                 FileGenerator.generateFile(FILENAME);
                 break;
             case DELETE:
+                RemoveTask.removeTask(args[2], args[1]);
                 System.out.println("Deleting a task");
                 break;
             default:

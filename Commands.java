@@ -1,9 +1,9 @@
 public enum Commands {
-    ADD("add"),
-    LIST("list"),
-    EDIT("edit"),
-    CREATE("create"),
-    DELETE("delete");
+    ADD("ADD"),
+    LIST("LIST"),
+    EDIT("EDIT"),
+    CREATE("CREATE"),
+    DELETE("DELETE");
 
     final private String command;
 
