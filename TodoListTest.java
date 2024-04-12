@@ -79,6 +79,20 @@ class TodoListTest {
             e.printStackTrace();
         }
     }
+    @Test
+    void removeTask() {
+        Task task = new Task("test");
+        try {
+            FileGenerator.generateFile("todo");
+            File file = new File("todo.txt");
+            todoList.addTask(task, file.getName());
+            RemoveTask.removeTask(task.getTaskText(), file.getName());
+            assertFalse(Files.readString(file.toPath()).contains(task.getTaskText()));
+            file.delete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
      @Test
     void lisTasksEmpty(){
         try {
