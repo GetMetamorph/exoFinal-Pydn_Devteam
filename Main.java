@@ -4,11 +4,14 @@ import java.io.IOException;
 public class Main {
     public static void readCommands(String[] args) throws IOException {
         String command = args[0];
+
+        TodoList todoList = new TodoList();
+
         Commands commandEnum = Commands.valueOf(command.toUpperCase());
         switch (commandEnum) {
             case ADD:
                 System.out.println("Adding a new task");
-
+                todoList.addTask(new Task(args[1]), args[2] );
                 break;
             case LIST:
                 System.out.println("Listing all tasks");
