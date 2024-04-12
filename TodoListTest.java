@@ -1,7 +1,10 @@
+
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 
@@ -30,6 +33,30 @@ class TodoListTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @Test
+    void markTaskHasDone() {
+        Task task = new Task("test");
+        try {
+            FileGenerator.generateFile("todo");
+            File file = new File("todo.txt");
+            todoList.addTask(task, file.getName());
+            todoList.markTaskHasDone(task, file.getName());
+            assertTrue(file.exists());
+            String content = Files.readString(file.toPath());
+            boolean sentenceFound = content.contains("["+Status.DONE +"]"+ " " + task.getTaskText() +" (" + task.getTaskCreatedDate() + ")");
+            assertTrue(sentenceFound);
+            file.delete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    void shouldThrowExceptionWhenFileDoesNotExistWhenMarkingTaskHasDone() {
+        Task task = new Task("test");
+        File file = new File("todo.txt");
+        assertThrows(FileNotFoundException.class,() -> todoList.markTaskHasDone(task, file.getName()));
+
     }
     @Test
     void shouldNotFailedAddTasksWhenTodoNotCreatedYet() {

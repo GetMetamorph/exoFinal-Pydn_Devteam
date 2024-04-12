@@ -21,7 +21,9 @@ public class Main {
                 todoList.listTasks(FILENAME);
                 break;
             case EDIT:
-                System.out.println("Editing a task");
+                String taskName = args[2];
+                todoList.markTaskHasDone(new Task(taskName), FILENAME);
+                System.out.println("task " + taskName + " has been marked as done");
                 break;
             case CREATE:
                 System.out.println("Creating a new Todo list");
