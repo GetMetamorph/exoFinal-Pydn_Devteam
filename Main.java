@@ -11,8 +11,10 @@ public class Main {
         Commands commandEnum = Commands.valueOf(COMMAND.toUpperCase());
         switch (commandEnum) {
             case ADD:
+                String TASK = args[2];
+
                 System.out.println("Adding a new task");
-                todoList.addTask(new Task(args[1]), args[2] );
+                todoList.addTask(new Task(TASK), FILENAME);
                 break;
             case LIST:
                 System.out.println("Listing all tasks");

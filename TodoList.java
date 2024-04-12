@@ -17,7 +17,7 @@
         }
 
         private void appendTaskToFile(String filename, Task task) throws IOException {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.filename, true))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
                 writer.write(task.toString());
                 writer.newLine();
             }
