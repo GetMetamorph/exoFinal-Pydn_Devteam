@@ -28,7 +28,7 @@ public class Task {
     }
 
     public String toString() {
-        return "Task: " + taskText + " Created on: " + taskCreatedDate;
+        return  "[" + status +"] " + taskText + " Created on: " + taskCreatedDate;
     }
 
 
