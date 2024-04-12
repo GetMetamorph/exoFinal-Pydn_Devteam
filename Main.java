@@ -16,6 +16,7 @@ public class Main {
                 break;
             case LIST:
                 System.out.println("Listing all tasks");
+                todoList.listTasks(FILENAME);
                 break;
             case EDIT:
                 System.out.println("Editing a task");

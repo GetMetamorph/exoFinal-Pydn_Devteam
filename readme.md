@@ -13,3 +13,4 @@ Functionnalities needed :
 ### To run the project
 Launch the Main.java from IDE using params "{command} {filename}"
 either "create {filename}" or "add {task description} {filename}"
+To see all the tasks, you can use "list {filename.txt}"
